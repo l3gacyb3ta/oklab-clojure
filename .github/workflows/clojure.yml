@@ -53,7 +53,7 @@ jobs:
           node-version: "16"
 
       - name: Install tailwind
-        run: npm install -D tailwindcss
+        run: npm install -g tailwindcss
 
       - name: Execute clojure code
         run: clojure -M src/build.clj
