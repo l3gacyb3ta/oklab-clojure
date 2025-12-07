@@ -48,7 +48,7 @@ jobs:
           restore-keys: cljdeps-
 
       - name: Install tailwind
-        run: npm -D tailwindcss
+        run: npm install -D tailwindcss
 
       - name: Execute clojure code
         run: clojure -M src/build.clj
