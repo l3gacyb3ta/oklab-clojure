@@ -60,9 +60,11 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        if: always()
         with:
           path: 'public/build' # Replace with the name of the folder you want to publish
 
       - name: Deploy to GitHub Pages
         id: deployment
+        if: always()
         uses: actions/deploy-pages@v4
