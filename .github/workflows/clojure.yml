@@ -47,6 +47,13 @@ jobs:
           # key: cljdeps-${{ hashFiles('build.boot') }}
           restore-keys: cljdeps-
 
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          env:
+            GITHUB_TOKEN: ${{ secrets.TESTING_GITHUB_TOKEN }}
+
       - name: Install tailwind
         run: npm install -D tailwindcss
 
