@@ -5,12 +5,7 @@ on: [push]
 jobs:
 
   clojure:
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -53,7 +48,7 @@ jobs:
           restore-keys: cljdeps-
 
       - name: Execute clojure code
-        run: timeout 5 clj -M src/build.clj
+        run: clojure -M src/build.clj
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
