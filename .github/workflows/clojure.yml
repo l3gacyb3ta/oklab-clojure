@@ -47,6 +47,9 @@ jobs:
           # key: cljdeps-${{ hashFiles('build.boot') }}
           restore-keys: cljdeps-
 
+      - name: Install tailwind
+        run: npm -D tailwindcss
+
       - name: Execute clojure code
         run: clojure -M src/build.clj
 
